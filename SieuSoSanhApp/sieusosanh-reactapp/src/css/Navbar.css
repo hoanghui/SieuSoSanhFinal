@@ -1,0 +1,14 @@
+.navbar-homeTemplate .navbar-logo{
+    margin: 10px;
+    font-weight: 700;
+    color: #000000;
+    padding-right: 6vh;
+}
+
+.search-text .form-control{
+    border: 0px solid;
+}
+
+#dropdownMenuButton {
+    color: black;
+}

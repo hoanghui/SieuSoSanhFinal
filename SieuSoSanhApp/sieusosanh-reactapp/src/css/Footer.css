@@ -1,0 +1,23 @@
+.footer-info-block {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 8vh;
+}
+
+.info-content-block {
+    width: 25%;
+    text-align: center;
+    padding: 2vh;
+    margin: 0 3vh;
+    justify-content: center;
+}
+
+.contents {
+    text-align: left;
+}
+
+.info-lable {
+    font-size: 1.5em;
+    font-weight: 500;
+}

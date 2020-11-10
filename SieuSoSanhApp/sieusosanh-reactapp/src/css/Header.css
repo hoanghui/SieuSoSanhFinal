@@ -1,0 +1,14 @@
+.header .presentation-title{
+    font-size: 6em;
+    font-weight: 500;
+}
+
+.section-dark{
+    min-width: 50vh;
+    height: 100px;
+}
+
+
+.heart-gif{
+    padding-right: 5vh;
+}

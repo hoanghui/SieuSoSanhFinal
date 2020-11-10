@@ -1,0 +1,50 @@
+.list-category > li {
+    display: inline-table;
+    min-width: 10%;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ul {
+    text-align: center;
+}
+
+.list-category > li:hover {
+    color: #51bcda;
+}
+
+.container-category {
+    padding-top: 8%;
+    padding-bottom: 20vh;
+}
+
+.category-title {
+    padding-top: 8%;
+    font-size: 4vh;
+    width: 30%;
+    margin: auto;
+}
+
+.fa, .fas {
+    font-size: 5vh;
+}
+
+.list-category-container {
+    padding-top: 6vh;
+    padding-bottom: 15vh;
+}
+
+.category-name {
+    padding-top: 2vh;
+}
+
+.circle-category {
+    border: solid 0.5px;
+    border-radius: 10vh;
+    width: 15vh;
+    height: 15vh;
+}
+
+.category-icon {
+    padding: 4.5vh;
+}
