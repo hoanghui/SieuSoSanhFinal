@@ -1,11 +1,8 @@
 # SieuSoSanhFinal
-
-# SieuSoSanh
 Web so sánh giá thương mại điện tử
 
 Trang chủ của web:
 
-![](https://github.com/hoanghui/SieuSoSanhFinal/blob/main/Photos/Diagram.PNG?raw=true)
 
 Code Selenium để Crawl Data từ các web thương mại( vd: Nguyễn Kim)
 
@@ -13,4 +10,4 @@ Code Selenium để Crawl Data từ các web thương mại( vd: Nguyễn Kim)
 
 Diagram
 
-![](https://github.com/hoanghui/SieuSoSanhFinal/tree/main/Photos/Photos/Diagram.PNG)
+![](https://github.com/hoanghui/SieuSoSanhFinal/blob/main/Photos/Diagram.PNG?raw=true)
