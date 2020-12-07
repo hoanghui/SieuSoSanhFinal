@@ -8,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Http;
-using SieuSoSanhAPICore.Middlewares;
 
 namespace SieuSoSanhAPICore
 {
@@ -73,9 +72,7 @@ namespace SieuSoSanhAPICore
             app.UseOpenApi();
             app.UseSwaggerUi3();
 
-            //config middleware
-            app.UseMiddleware<CheckAcessMiddleware>();
-            app.UseCheckAccess();
+            
         }
 
 

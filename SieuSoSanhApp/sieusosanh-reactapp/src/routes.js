@@ -2,6 +2,7 @@ import Home from "./views/home/Home";
 import SearchPage from "./views/search-page/Search-page"
 import ProductDetailPage from "./views/product-detail-page/ProductDetail-page"
 import ListProductsPage from "./views/list-product-category-page/ListProductsPage";
+import Signin from "./views/admin/Signin";
 
 const routesHome=[
     {

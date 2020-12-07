@@ -7,12 +7,10 @@ class ListBrand extends Component {
     GoToListProductsByBrandName=()=>{
         if(this.props && this.props.listSuppliersByCategoryCode){
             let temp = this.props.listSuppliersByCategoryCode
-            let categoryCode = temp[0].CategoryCode
+            let categoryCode = temp[0].categoryCode
             let {data} = this.props
-            console.log(categoryCode)
-            console.log(data.SupplierID)
-            this.props.getListProductsByBrandName(categoryCode, data.SupplierName)
-            this.props.history.push(`/${categoryCode}/${data.SupplierName}`)
+            this.props.getListProductsByBrandName(categoryCode, data.supplierName)
+            this.props.history.push(`/${categoryCode}/${data.supplierName}`)
         }
     }
     
@@ -21,7 +19,7 @@ class ListBrand extends Component {
             let {data} = this.props
             let {list} = this.props.listProductsByCategory
             return (<li onClick={()=>this.GoToListProductsByBrandName()}>
-                    {data.SupplierName} ({data.QuantityProduct})
+                    {data.supplierName} ({data.quantityProduct})
                 </li>
             )
         }
@@ -30,8 +28,8 @@ class ListBrand extends Component {
 
 const mapDispatchToProps=(dispatch)=>{
     return {
-        getListProductsByBrandName:(categoryCode, SupplierID) =>{
-            dispatch(action.getListProductsByBrandName(categoryCode, SupplierID))
+        getListProductsByBrandName:(categoryCode, supplierID) =>{
+            dispatch(action.getListProductsByBrandName(categoryCode, supplierID))
         }
     }
 }

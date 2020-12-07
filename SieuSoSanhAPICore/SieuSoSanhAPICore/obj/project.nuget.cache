@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "HeOVWMMWyzeGLdjGWAfgUiGLVrX1PIW3lQFBFKw0+husKw8NdJr5bTMXWjRJuI+dUNW8NBS+507G/Y8F8kXpRw==",
+  "dgSpecHash": "qjy7KLlpXksjkDkyk/ZkJXmOfoyesPF4UcUMR4OZNUpJwUqOHT+wqfDeHZoI1MU6SM27EIqT3SH63jNyu84M0g==",
   "success": true,
-  "projectFilePath": "D:\\TaiLieuHocTap\\Visual\\SieuSoSanhAPICore\\SieuSoSanhAPICore\\SieuSoSanhAPICore.csproj",
+  "projectFilePath": "D:\\TaiLieuHocTap\\DoAn\\SieuSoSanhFinal\\SieuSoSanhAPICore\\SieuSoSanhAPICore\\SieuSoSanhAPICore.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\microsoft.aspnetcore.authorization\\1.0.3\\microsoft.aspnetcore.authorization.1.0.3.nupkg.sha512",

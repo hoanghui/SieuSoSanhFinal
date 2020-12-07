@@ -14,21 +14,21 @@ class ProductRow extends Component{
             <li className="same-product">
                 <div className="store-product-img-wrapper">
                     <div className="store-product-img">
-                        <img src={data.LinkOfProductImage}/>    
+                        <img src={data.linkOfProductImage}/>    
                     </div>
                 </div>
                 <div className="same-product-detail">
                     <div className="product-name">
-                        {data.ProductName}
+                        {data.productName}
                     </div>
                     <div className="merchant-logo">
-                        <img src={data.CompanyImage} className="merchant-logo-image"/>    
+                        <img src={data.companyImage} className="merchant-logo-image"/>    
                     </div>
                     <div className="price">
-                        {data.Price}
+                        {data.price}
                     </div>
                     <div className="product-go-action">
-                        <a type="button" className="move-action btn btn-outline-primary float-lg-right" href={data.HyperLink}> Đến nơi bán </a>
+                        <a type="button" className="move-action btn btn-outline-primary float-lg-right" href={data.hyperLink}> Đến nơi bán </a>
                     </div>
                 </div>
                 <hr/>

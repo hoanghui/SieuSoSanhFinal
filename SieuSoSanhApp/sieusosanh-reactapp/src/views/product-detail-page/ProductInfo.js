@@ -10,30 +10,30 @@ class ProductInfo extends Component {
         <div className="box-product-info container row">
             <div className="product-slide-container col-lg-6">
                 <div className=" product-img">
-                    <img src={data[0].LinkOfProductImage}/>
+                    <img src={data[0].linkOfProductImage}/>
                 </div>
             </div>
             <div className="info-product-detail col-lg-6">
                 <div className=" product-detail-name my-1">
-                    <h1>{data[0].ProductName}</h1>
+                    <h1>{data[0].productName}</h1>
                 </div>
                 <hr/>
                 <div className="info-content    ">
                     <div className="brand-box">
                         <span>Thương hiệu : </span>
-                        <span className="brand-name">{data[0].SupplierName}</span>
+                        <span className="brand-name">{data[0].supplierName}</span>
                     </div>
                 </div>
                 <div className="priority-store">
                     <span>Giá tốt từ nơi bán: </span>
                     <div className="product-price-detail">
-                        {data[0].Price}
+                        {data[0].price}
                     </div>
                     <div className="company-logo">
-                        <img src = {data[0].CompanyImage} className="company-logo-image"/>
+                        <img src = {data[0].companyImage} className="company-logo-image"/>
                     </div>
                     <div>
-                        <a type="button" class="btn btn-outline-danger float-lg-right" href={data[0].HyperLink}> Đến nơi bán </a>
+                        <a type="button" class="btn btn-outline-danger float-lg-right" href={data[0].hyperLink}> Đến nơi bán </a>
                     </div>
                     
                 </div>

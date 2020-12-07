@@ -7,9 +7,8 @@ import {withRouter} from "react-router-dom"
 class BoxProduct extends Component {
     GoToDetail=()=>{
         let {data}=this.props
-        let id = data.ProductID
-        let name = data.ProductName
-        //console.log(name)
+        let id = data.productID
+        let name = data.productName
         this.props.getProductDetail(id)
         this.props.getListSameProducts(id)
         this.props.history.push(`/product/${name}`)
@@ -17,26 +16,28 @@ class BoxProduct extends Component {
 
     componentWillUnmount(){
         let {data}=this.props
-        let id = data.ProductID
-        console.log("vo roi")
-        // console.log(id)
-        // this.props.getListSameProducts(id)
+        let id = data.productID
     }
 
     render() {
+        console.log('hoanghuy')
         let {data}=this.props
+        if(data)
+        {
+            console.log(data.categoryName)
+        }
         return (
             <div className="col-lg-4">
                 <div className="box-product">
                     <div className=" product-img">
                         
-                        <img src={data.LinkOfProductImage} atl={data.ProductName} />
+                        <img src={data.linkOfProductImage} atl={data.productName} />
                     </div>
                     <div className=" btn-sosanhgia text-center " onClick={this.GoToDetail}>
                         <div>So sánh giá</div>
                     </div>
-                    <div className=" product-detail product-name text-center my-1">{data.ProductName}</div>
-                    <div className=" product-detail product-price text-center">{data.Price}</div>
+                    <div className=" product-detail product-name text-center my-1">{data.productName}</div>
+                    <div className=" product-detail product-price text-center">{data.price}</div>
                 </div>
             </div>
         )

@@ -38,18 +38,15 @@ class ListProductsPage extends Component {
     }
 
     goToOwner = (category) => {
-        console.log(category)
         this.props.history.push(`/${category}`)
     }
 
     componentDidMount = () => {
         let name = this.props.match.params.name;
         let supplierName = this.props.match.params.supplierName;
-        console.log(supplierName)
         if (supplierName) {
             this.props.getListProductsByBrandName(name, supplierName)
             this.props.getListSuppliersByCategoryCode(name)
-            console.log('ok')
         }
         else {
             this.props.getListSuppliersByCategoryCode(name)
@@ -61,8 +58,6 @@ class ListProductsPage extends Component {
     render() {
         let { listProductsByCategory } = this.props
         if (listProductsByCategory && listProductsByCategory[0]) {
-            console.log(listProductsByCategory.length)
-            console.log(this.state.first)
         }
         return (
             listProductsByCategory && listProductsByCategory[0] ?

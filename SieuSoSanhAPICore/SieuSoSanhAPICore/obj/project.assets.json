@@ -7871,11 +7871,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\TaiLieuHocTap\\Visual\\SieuSoSanhAPICore\\SieuSoSanhAPICore\\SieuSoSanhAPICore.csproj",
+      "projectUniqueName": "D:\\TaiLieuHocTap\\DoAn\\SieuSoSanhFinal\\SieuSoSanhAPICore\\SieuSoSanhAPICore\\SieuSoSanhAPICore.csproj",
       "projectName": "SieuSoSanhAPICore",
-      "projectPath": "D:\\TaiLieuHocTap\\Visual\\SieuSoSanhAPICore\\SieuSoSanhAPICore\\SieuSoSanhAPICore.csproj",
+      "projectPath": "D:\\TaiLieuHocTap\\DoAn\\SieuSoSanhFinal\\SieuSoSanhAPICore\\SieuSoSanhAPICore\\SieuSoSanhAPICore.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "D:\\TaiLieuHocTap\\Visual\\SieuSoSanhAPICore\\SieuSoSanhAPICore\\obj\\",
+      "outputPath": "D:\\TaiLieuHocTap\\DoAn\\SieuSoSanhFinal\\SieuSoSanhAPICore\\SieuSoSanhAPICore\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
