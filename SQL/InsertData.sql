@@ -3,7 +3,7 @@
 --LAPTOP_NGUYENKIM
 Declare @JSON varchar(max)
 SELECT @JSON=BulkColumn
-FROM OPENROWSET (BULK 'D:\TaiLieuHocTap\DoAn\PycharmProjects\CrawlOfficial\NguyenKim\LaptopNguyenKim.json', SINGLE_CLOB) import
+FROM OPENROWSET (BULK 'D:\zDoAn\SieuSoSanhFinal\PycharmProjects\CrawlOfficial\NguyenKim\TVNguyenKim.json', SINGLE_CLOB) import
 
 INSERT INTO Products (ProductName, Price,HyperLink,LinkOfProductImage,CategoryID,CompanyID,SupplierID)
 SELECT * 
@@ -11,7 +11,7 @@ FROM OPENJSON (@JSON)
 WITH 
 (
 	[nameOftheProduct] nvarchar(100), 
-    [priceoftheProduct] varchar(20),
+    [priceoftheProduct] int,
     [hyperlink] varchar(100),
 	[LinkOfProductImage] varchar(MAX),
 	[CategoryID] int,
@@ -22,7 +22,7 @@ WITH
 --TV_NGUYENKIM
 Declare @JSON varchar(max)
 SELECT @JSON=BulkColumn
-FROM OPENROWSET (BULK 'D:\TaiLieuHocTap\DoAn\PycharmProjects\CrawlOfficial\NguyenKim\TVNguyenKim.json', SINGLE_CLOB) import
+FROM OPENROWSET (BULK 'D:\zDoAn\SieuSoSanhFinal\PycharmProjects\CrawlOfficial\NguyenKim\TVNguyenKim.json', SINGLE_CLOB) import
 
 INSERT INTO Products (ProductName, Price,HyperLink,LinkOfProductImage,CategoryID,CompanyID,SupplierID)
 SELECT * 

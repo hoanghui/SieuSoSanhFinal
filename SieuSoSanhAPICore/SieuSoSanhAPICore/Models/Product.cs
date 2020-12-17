@@ -14,7 +14,7 @@ namespace SieuSoSanhAPICore.Models
 
         public int ProductId { get; set; }
         public string ProductName { get; set; }
-        public string Price { get; set; }
+        public int? Price { get; set; }
         public string HyperLink { get; set; }
         public string LinkOfProductImage { get; set; }
         public int? CategoryId { get; set; }

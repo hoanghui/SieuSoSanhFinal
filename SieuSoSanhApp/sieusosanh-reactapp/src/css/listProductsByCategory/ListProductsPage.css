@@ -2,9 +2,36 @@
     text-align: left;
     list-style-type: none;
     font-weight: 500;
+    padding-top: 3vh;
 }
 
 .keyword-info:hover {
     cursor: pointer;
     color: #51bcda;
+}
+
+.accordion {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    padding: 2vh 0 2vh 2vh;
+    width: 100%;
+    text-align: left;
+    justify-content: flex-start;
+}
+
+.accordion > strong {
+    font-weight: bold;
+}
+
+.brand-title{
+    background-color: #fff;
+}
+
+.brand-title > .accordion:hover, .price-title:hover {
+    background-color: #eee;
+}
+
+.slider-side{
+    padding: 2vh ;
 }

@@ -36,11 +36,11 @@ export const getProductDetail=(id)=>{
     }
 }
 
-export const getListProductsByCategory=(code)=>{
+export const getListProductsByCategory=(code, page)=>{
     return dispatch=>{
         Axios({
             method:"GET",
-            url:`https://localhost:3001/api/products/${code}`
+            url:`https://localhost:3001/api/products/${code}/page=${page}`
         })
         .then((rs)=>{
             dispatch({
@@ -99,6 +99,24 @@ export const getListSameProducts=(productID)=>{
         .then((rs)=>{
             dispatch({
                 type:"LIST_SAME_PRODUCTS",
+                data:rs.data
+            })
+        })
+        .catch((err)=>{
+            console.log(err)
+        })
+    }
+}
+
+export const getListProductsByFilter=(min, max)=>{
+    return dispatch=>{
+        Axios({
+            method:"GET",
+            url:`https://localhost:3001/api/products/filter/${min}/${max}`
+        })
+        .then((rs)=>{
+            dispatch({
+                type:"LIST_PRODUCTS_FILTER",
                 data:rs.data
             })
         })

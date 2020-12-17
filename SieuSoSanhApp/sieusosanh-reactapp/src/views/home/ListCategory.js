@@ -19,7 +19,7 @@ class ListCategory extends Component {
             category: name
         })
 
-        this.props.history.push(`/${name}`)
+        this.props.history.push(`/${name}/page=1`)
         // this.GoToListProducts()
 
     }

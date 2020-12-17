@@ -15,6 +15,7 @@ import "./css/productDetailPage/priceTable.css"
 import "./css/Navbar/Navbar.css"
 import "./assets/demo/demo.css"
 import "./css/Footer.css"
+
 //redux
 import {createStore,applyMiddleware,compose} from "redux";
 import {Provider} from "react-redux";

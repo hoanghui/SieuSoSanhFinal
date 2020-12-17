@@ -94,7 +94,7 @@ function IndexNavbar({getListProductsByKeyWord}) {
              to="/"
             >
               <img src={iconsss} className="search-icon"></img>
-              SIÊU SO SÁNH . COM
+              <a>SIÊU SO SÁNH.COM</a>
             </NavLink>
             <Button
                       className="btn-round"

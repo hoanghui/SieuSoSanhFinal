@@ -6,13 +6,12 @@
     font-weight: 600;
 }
 
-.box-product .product-img{
-    display: flex;
-    justify-content: center;
+.box-product > .product-img{
+    display: flex; 
 }
-.box-product .product-img img{
-    width: 200px;
-}
+/* .box-product .product-img img{
+    width: 30vh;
+} */
 .box-product .btn-sosanhgia >div{
     border:2px solid #51bcda;
     display: inline-block;

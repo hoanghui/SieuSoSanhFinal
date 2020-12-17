@@ -1,3 +1,13 @@
 .search-icon {
     width: 10vh;
 }
+
+/* .navbar-translate{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+} */
+
+.navbar-logo{
+    width: 6vh;
+}

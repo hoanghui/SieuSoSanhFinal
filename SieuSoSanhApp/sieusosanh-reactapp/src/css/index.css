@@ -5,4 +5,5 @@
 @import "./searchPage/optionProduct.css";
 @import "./productDetailPage/productInfo.css";
 @import "./listProductsByCategory/listBrand.css";
-@import "./Footer.css"
+@import "./Footer.css";
+@import "./listProductsByCategory/filterPrice.css";

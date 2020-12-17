@@ -6,7 +6,8 @@ let initialState={
     listSuppliersByCategoryCode:[],
     productDetail:{},
     listProductsByBrandName:[],
-    listSameProducts:[]
+    listSameProducts:[],
+    listProductsByFilter:[]
 }
 
 const productsReducer =(state=initialState, action)=> {
@@ -36,6 +37,10 @@ const productsReducer =(state=initialState, action)=> {
             state.listSameProducts=action.data;
             return{...state}
 
+        case "LIST_PRODUCTS_FILTER":
+            state.listProductsByCategory = action.data;
+            return {...state}
+            
         default:
             return {...state}
     }

@@ -26,7 +26,8 @@ for i in tqdm(hrefLinkList):
     time.sleep(1)
     try:
         nameOftheProduct = webD.find_element_by_class_name('product_info_name').text
-        priceoftheProduct = webD.find_element_by_class_name('nk-price-final').text
+        p = webD.find_element_by_class_name('nk-price-final').text
+        priceoftheProduct = p.replace('.','')
         linkProductImage = webD.find_element_by_class_name('img-full-width')
         src = linkProductImage.get_property('src')
         #     descOfProduct = webD.find_element_by_xpath(

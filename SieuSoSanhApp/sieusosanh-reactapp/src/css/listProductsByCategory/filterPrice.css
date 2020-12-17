@@ -1,0 +1,50 @@
+
+.text-filter {
+    margin-left: 1vh;
+}
+
+.text-min {
+    width: 100%;
+}
+
+.text-max {
+    width: 100%;
+}
+
+.slider-filter {
+    color: #51bcda ;
+}
+
+.filter-price{
+    text-align: left;
+    font-weight: 500;
+}
+
+.slider-filter-box {
+    width: 100%;
+    margin: auto;
+    padding: 2vh;
+}
+
+.btn-apdung{
+    padding: 10%;
+}
+
+.btn-apdung > div {
+    border:2px solid #51bcda;
+    display: inline-block;
+    padding: 5px;
+    margin: 20px 0;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all .5s;
+    color: #51bcda;
+    font-weight: 500;
+    width: 100%;
+    margin: auto;
+}
+
+.btn-apdung >div:hover{
+    color: white;
+    background-color: #51bcda;
+}

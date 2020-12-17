@@ -12,9 +12,6 @@ function App() {
 
   
   const showMenuHome=routes=>{
-    if(this.props.match.params.name == "admin"){
-      return 
-    }
     if(routes && routes.length >0 ){
         return routes.map((item,index)=>{
           return(
@@ -30,7 +27,6 @@ function App() {
         })
     }
   }
-
   return (
     //BrowserRouter se theo doi theo thanh url de render view tuong ung dua theo file routes.js
     <BrowserRouter>

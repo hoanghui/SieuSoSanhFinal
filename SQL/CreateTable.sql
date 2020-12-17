@@ -3,7 +3,7 @@
 CREATE TABLE Products (
 	ProductID INT IDENTITY NOT NULL PRIMARY KEY,
 	ProductName nvarchar(100), 
-    Price nvarchar(20), 
+    Price double, 
     HyperLink varchar(MAX),
 	LinkOfProductImage varchar(MAX),
 	CategoryID INT,

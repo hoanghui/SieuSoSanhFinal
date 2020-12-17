@@ -78,32 +78,6 @@ namespace SieuSoSanhAPICore.Controllers
             }
         }
 
-        //[Route("api/products/detail/{id}")]
-        //[HttpGet]
-        //public IEnumerable<ProductsViewModel> GetProductByID(int id)
-        //{
-        //    using (EntityDataContext _context = new EntityDataContext())
-        //    {
-        //        var product = _context.Products.Where(p => p.ProductId == id).ToList();
-        //        var companyID = product[0].CompanyId;
-        //        var company = _context.Companies.Where(c => c.CompanyId == companyID).ToList();
-        //        var logo = company[0].CompanyImage;
-        //        return _context.Products.Join(_context.Suppliers, p => p.SupplierId, s => s.SupplierId, (p, s) => new ProductsViewModel()
-        //        {
-        //            ProductID = p.ProductId,
-        //            ProductName = p.ProductName,
-        //            HyperLink = p.HyperLink,
-        //            Price = p.Price,
-        //            LinkOfProductImage = p.LinkOfProductImage,
-        //            CategoryID = p.CategoryId,
-        //            SupplierID = p.SupplierId,
-        //            CompanyID = p.CompanyId,
-        //            SupplierName = s.SupplierName,
-        //            CompanyImage = logo
-        //        }).Where(p => p.ProductID == id).ToList();
-        //    }
-        //}
-
         [Route("api/products/detail/{id}")]
         [HttpGet]
         public async Task<IActionResult> GetProductByID(int id)
@@ -226,6 +200,40 @@ namespace SieuSoSanhAPICore.Controllers
                             }).ToList();
                 return list;
             }
+        }
+
+        //pagination test
+        [Route("api/products/{categoryCode}/page={num}")]
+        [HttpGet]
+        public IEnumerable<ProductsViewModel> TestPagination(string categoryCode, int num)
+        {
+            using (EntityDataContext _context = new EntityDataContext())
+            {
+                var startIndex = (num - 1) * 24;  
+                var list = (from p in _context.Products
+                            join c in _context.Categories on p.CategoryId equals c.CategoryId
+                            where c.CategoryCode == categoryCode
+                            select new ProductsViewModel
+                            {
+                                ProductID = p.ProductId,
+                                ProductName = p.ProductName,
+                                HyperLink = p.HyperLink,
+                                Price = p.Price,
+                                LinkOfProductImage = p.LinkOfProductImage,
+                                CategoryName = c.CategoryName,
+                                CategoryCode = c.CategoryCode
+                            }).Skip(startIndex).Take(24).ToList(); 
+                return list;
+            }
+        }   
+
+        [Route("api/products/filter/{min}/{max}")]
+        [HttpGet]
+        public IEnumerable<Product> FilterPrice(int? min, int? max) 
+        {
+            EntityDataContext _context = new EntityDataContext();
+            var products = _context.Products.Where(p => p.Price >= min && p.Price <= max).ToList();
+            return products;
         }
     }
 }
