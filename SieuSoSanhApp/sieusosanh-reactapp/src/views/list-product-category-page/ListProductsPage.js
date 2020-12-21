@@ -6,7 +6,6 @@ import * as action from "../../redux/actions/index"
 import { Paginator } from 'primereact/paginator';
 import SliderFilter from '../../components/SliderFilter/SliderFilter'
 import Accordion from 'react-bootstrap/Accordion';
-import { useAccordionToggle } from 'react-bootstrap/AccordionToggle';
 
 class ListProductsPage extends Component {
     constructor(props) {
@@ -15,12 +14,18 @@ class ListProductsPage extends Component {
             first: 1,
             rows: 10,
             min: 0,
-            max: 100000000
+            max: 100000000,
+            sort: '',
+            value: 'select'
         };
     }
 
     renderProductbox = () => {
-        let { listProductsByCategory } = this.props
+        let { listProductsByCategory } = this.props;
+        let sort = this.state.sort;
+        if(sort !==''){
+            listProductsByCategory.sort((a,b) => (this.state.sort === 'increase') ? (a.price > b.price ? 1:-1):(a.price < b.price ? 1:-1))
+        }
         return listProductsByCategory.map((item, index) => {
             return (
                 <BoxProduct
@@ -53,7 +58,7 @@ class ListProductsPage extends Component {
     applyFilter = () => {
         let min = this.state.min;
         let max = this.state.max;
-        if(max != 0)
+        if(max !== 0)
         {
             this.props.getListProductsByFilter(min, max);
         }
@@ -69,11 +74,30 @@ class ListProductsPage extends Component {
         this.props.history.push(`/${category}/page=1`)
     }
 
+    changeOption = (event) => {
+        this.setState({ sort: event.target.value});
+        let opt = event.target.value;
+        // if(opt === 'increase'){
+        //     this.setState({ value: 'Giá tăng dần'});
+        // } else{
+        //     this.setState({ value: 'Giá giảm dần'});
+        // }
+    }
+
+    // listProducts = () => {
+    //     this.setState(state => {
+    //             if(state.sort !==''){
+    //                 state.productsReducer.listProductsByCategory.sort((a,b) => (state.sort === 'increase') ? (a.price < b.price ? 1:-1):(a.price > b.price))
+    //             }
+    //             return{
+    //                 listProductsByCategory: state.productsReducer.listProductsByCategory,
+    //             }
+    //         })
+    // }
+
     componentDidMount = () => {
         let name = this.props.match.params.name;
         let supplierName = this.props.match.params.supplierName;
-        let min = this.state.min;
-        let max = this.state.max;
         if (supplierName) {
             this.props.getListProductsByBrandName(name, supplierName)
             this.props.getListSuppliersByCategoryCode(name)
@@ -87,8 +111,7 @@ class ListProductsPage extends Component {
     render() {
         let { listProductsByCategory } = this.props
         if (listProductsByCategory && listProductsByCategory[0]) {
-            console.log(listProductsByCategory[0]);
-            console.log("ok");
+            console.log(this.state.sort);
         }
         return (
             listProductsByCategory && listProductsByCategory[0] ?
@@ -96,6 +119,18 @@ class ListProductsPage extends Component {
                     <div className='container'>
                         <div className="keyword-info py-4 text-center result" onClick={() => this.goToOwner(listProductsByCategory[0].categoryCode)}>
                             {listProductsByCategory[0].categoryName}
+                        </div>
+                    </div>
+                    <div className="container">
+                        <div className="product-filter-sort">
+                            <label>
+                                <span>Sắp xếp</span>
+                                <select onChange={this.changeOption} className="form-control" value={this.state.sort}>
+                                    <option value="select">Chọn đi nà</option>
+                                    <option value="increase">Giá tăng dần</option>
+                                    <option value="decrease">Giá giảm dần</option>
+                                </select>
+                            </label>
                         </div>
                     </div>
                     <div className="container">

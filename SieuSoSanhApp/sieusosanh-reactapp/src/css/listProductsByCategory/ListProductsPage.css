@@ -35,3 +35,18 @@
 .slider-side{
     padding: 2vh ;
 }
+
+.product-filter-sort {
+    padding: 5vh;
+    justify-content: flex-end;
+    display: flex;
+}
+
+label {
+    display: flex;
+}
+
+label > span {
+    min-width: 8vh;
+    padding: 1vh 0vh;
+}

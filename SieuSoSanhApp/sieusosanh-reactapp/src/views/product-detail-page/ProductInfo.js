@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from "react-redux"
 //withRouter de redirect qua trang khac
-import * as action from "../../redux/actions"
+import NumberFormat from 'react-number-format';
 
 class ProductInfo extends Component {
     render() {
@@ -27,7 +27,7 @@ class ProductInfo extends Component {
                 <div className="priority-store">
                     <span>Giá tốt từ nơi bán: </span>
                     <div className="product-price-detail">
-                        {data[0].price}
+                        <NumberFormat value={data[0].price} displayType={'text'} thousandSeparator={true} suffix={' đ'} />
                     </div>
                     <div className="company-logo">
                         <img src = {data[0].companyImage} className="company-logo-image"/>

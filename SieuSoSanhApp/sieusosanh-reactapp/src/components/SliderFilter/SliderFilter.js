@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Slider} from '@material-ui/core';
 import { Component } from 'react';
 
@@ -8,10 +8,8 @@ export default class SliderFilter extends Component{
         this.state = { 
             maxSize: 100000000,
             val: [0, 100000000]
-            
         };
 
-        //
         this.updateRange = this.updateRange.bind(this);
         this.callMultiFunction = this.callMultiFunction.bind(this);
     }
