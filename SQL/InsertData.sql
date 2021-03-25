@@ -30,7 +30,7 @@ FROM OPENJSON (@JSON)
 WITH 
 (
 	[nameOftheProduct] nvarchar(100), 
-    [priceoftheProduct] varchar(20),
+    [priceoftheProduct] int,
     [hyperlink] varchar(100),
 	[LinkOfProductImage] varchar(MAX),
 	[CategoryID] int,

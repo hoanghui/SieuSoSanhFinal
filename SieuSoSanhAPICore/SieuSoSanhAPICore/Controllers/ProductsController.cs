@@ -204,7 +204,7 @@ namespace SieuSoSanhAPICore.Controllers
 
         //pagination test
         [Route("api/products/{categoryCode}/page={num}")]
-        [HttpGet]
+        [HttpGet]   
         public IEnumerable<ProductsViewModel> TestPagination(string categoryCode, int num)
         {
             using (EntityDataContext _context = new EntityDataContext())

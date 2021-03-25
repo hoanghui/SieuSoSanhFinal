@@ -7,7 +7,7 @@ const HomeLayout = props => {
     return (
         <Fragment>  
             <Navbar></Navbar>
-            {props.children}
+                {props.children}
             <Footer></Footer>
         </Fragment>
     )

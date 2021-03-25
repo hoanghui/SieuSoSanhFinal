@@ -22,7 +22,6 @@ class BoxProduct extends Component {
 
     render() {
         let {data}=this.props;
-        console.log(data);
         return (
             <div className="col-lg-4">
                 <div className="box-product">

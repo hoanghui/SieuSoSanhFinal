@@ -28,7 +28,7 @@ class ProductDetailPage extends Component{
 
     render() {
         return(
-            <div>
+            <div className="container product-detail-page">
                 <div className="container product-info">
                     {this.renderProductDetail()}
                 </div>
@@ -108,7 +108,7 @@ const mapDispatchToProps=(dispatch)=>{
         getListSameProducts:(productName)=>{
             dispatch(action.getListSameProducts(productName))
         }
-    }
+    } 
 }
 
 export default connect(mapStateToProps,mapDispatchToProps)(ProductDetailPage);

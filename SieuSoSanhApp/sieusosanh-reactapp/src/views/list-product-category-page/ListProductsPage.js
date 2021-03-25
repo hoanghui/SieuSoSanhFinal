@@ -36,6 +36,7 @@ class ListProductsPage extends Component {
     }
 
     renderListBrand = () => {
+        console.log(this.props.listSuppliersByCategoryCode)
         if (this.props.listSuppliersByCategoryCode.length > 0) {
             return this.props.listSuppliersByCategoryCode.map((item, index) => {
                 return (
@@ -65,9 +66,7 @@ class ListProductsPage extends Component {
     }
 
     changePrice = (data) => {
-        console.log("Change price filter");
         this.setState({min: data[0], max: data[1]})
-        console.log(data[0]);
     }
 
     goToOwner = (category) => {
@@ -76,24 +75,7 @@ class ListProductsPage extends Component {
 
     changeOption = (event) => {
         this.setState({ sort: event.target.value});
-        let opt = event.target.value;
-        // if(opt === 'increase'){
-        //     this.setState({ value: 'Giá tăng dần'});
-        // } else{
-        //     this.setState({ value: 'Giá giảm dần'});
-        // }
     }
-
-    // listProducts = () => {
-    //     this.setState(state => {
-    //             if(state.sort !==''){
-    //                 state.productsReducer.listProductsByCategory.sort((a,b) => (state.sort === 'increase') ? (a.price < b.price ? 1:-1):(a.price > b.price))
-    //             }
-    //             return{
-    //                 listProductsByCategory: state.productsReducer.listProductsByCategory,
-    //             }
-    //         })
-    // }
 
     componentDidMount = () => {
         let name = this.props.match.params.name;
@@ -101,6 +83,7 @@ class ListProductsPage extends Component {
         if (supplierName) {
             this.props.getListProductsByBrandName(name, supplierName)
             this.props.getListSuppliersByCategoryCode(name)
+            this.props.getListProductsByCategory(name, this.state.first)
         }
         else {
             this.props.getListSuppliersByCategoryCode(name)
@@ -110,9 +93,9 @@ class ListProductsPage extends Component {
 
     render() {
         let { listProductsByCategory } = this.props
-        if (listProductsByCategory && listProductsByCategory[0]) {
-            console.log(this.state.sort);
-        }
+        // if (listProductsByCategory && listProductsByCategory[0]) {
+        //     console.log(this.state.sort);
+        // }
         return (
             listProductsByCategory && listProductsByCategory[0] ?
                 <div className="search-page">
@@ -122,7 +105,7 @@ class ListProductsPage extends Component {
                         </div>
                     </div>
                     <div className="container">
-                        <div className="product-filter-sort">
+                        <div className="product-filter-sort"> 
                             <label>
                                 <span>Sắp xếp</span>
                                 <select onChange={this.changeOption} className="form-control" value={this.state.sort}>
@@ -204,7 +187,7 @@ class ListProductsPage extends Component {
                         <Paginator first={this.state.first} 
                                    rows={this.state.rows} 
                                    totalRecords={listProductsByCategory.length}
-                                   onPageChange={(e) => this.setState({ first: e.first, rows: e.rows })}>   
+                                   onPageChange={(e) => this.setState({ first: 2, rows: e.rows })}>   
                         </Paginator>
                     </div>
                 </div> : null)
